@@ -1,0 +1,32 @@
+semester,course_code,course_name,credits,faculty,syllabus,status
+1,MA101,Engineering Mathematics I,4,Dr. A. Sharma,"Matrices; calculus; differential equations; series expansion",Completed
+1,PH101,Engineering Physics,4,Dr. B. Rao,"Waves; optics; semiconductors; lasers; quantum mechanics",Completed
+1,CS101,Problem Solving & C Programming,4,Prof. C. Verma,"Variables; loops; functions; pointers; structures; file I/O",Completed
+1,EE101,Basic Electrical Engineering,3,Prof. S. Nair,"DC circuits; AC fundamentals; transformers; induction motors",Completed
+2,MA201,Engineering Mathematics II,4,Dr. A. Sharma,"Linear algebra; vector calculus; Fourier series; Laplace transforms",Completed
+2,CH201,Engineering Chemistry,4,Dr. K. Gupta,"Polymers; electrochemistry; corrosion control; water treatment",Completed
+2,CS201,Object Oriented Programming in C++,4,Prof. R. Menon,"Classes; objects; inheritance; polymorphism; templates; STL",Completed
+2,ME201,Engineering Graphics & Design,3,Prof. T. Kumar,"Orthographic projections; isometric views; CAD drafting",Completed
+3,CS301,Data Structures,4,Dr. V. Murthy,"Stacks; queues; linked lists; trees; graphs; sorting; hashing",In Progress
+3,CS302,Digital Logic & Computer Organization,4,Prof. P. Iyer,"Boolean algebra; combinational circuits; ALU; CPU pipelining; memory hierarchy",In Progress
+3,CS303,Discrete Mathematics,4,Dr. A. Sharma,"Set theory; relations; graph theory; recurrence relations; combinatorics",Completed
+3,CS304,Data Structures Lab,2,Dr. V. Murthy,"Implementation of stacks; queues; binary search trees; graph traversals",In Progress
+4,CS401,Design and Analysis of Algorithms,4,Dr. V. Murthy,"Divide and conquer; dynamic programming; greedy algorithms; NP-completeness",Not Started
+4,CS402,Database Management Systems,4,Prof. N. Roy,"ER modeling; relational algebra; SQL queries; normalization; ACID transactions",Not Started
+4,CS403,Operating Systems,4,Prof. C. Verma,"Process scheduling; threads; deadlock; memory management; virtual memory; file systems",Not Started
+4,CS404,DBMS & OS Lab,2,Prof. N. Roy,"SQL queries; procedures; triggers; shell scripting; process forks",Not Started
+5,CS501,Computer Networks,4,Prof. M. Joseph,"OSI layer model; TCP/UDP; IP addressing; routing algorithms; socket programming",Not Started
+5,CS502,Formal Languages & Automata Theory,4,Dr. A. Sharma,"Regular expressions; finite automata; context-free grammars; pushdown automata; Turing machines",Not Started
+5,CS503,Software Engineering,3,Prof. L. Patil,"Software lifecycle models; Agile Scrum; UML diagrams; software testing; Git workflows",Not Started
+5,CS504,Web Technologies,3,Prof. R. Menon,"HTML5; CSS3; JavaScript modern syntax; React basics; REST APIs; Node.js",Not Started
+6,CS601,Compiler Design,4,Dr. V. Murthy,"Lexical analysis; LL/LR parsers; syntax directed translation; intermediate code; code optimization",Not Started
+6,CS602,Artificial Intelligence & Machine Learning,4,Dr. S. Bannerjee,"Search heuristics; minimax; regression; classification; decision trees; neural networks",Not Started
+6,CS603,Information Security & Cryptography,3,Prof. P. Iyer,"Symmetric ciphers; AES; public key RSA; SHA hashing; digital signatures; firewalls",Not Started
+6,CS604,Mini Project,3,Prof. L. Patil,"Project ideation; architectural design; milestone reviews; functional deployment",Not Started
+7,CS701,Cloud Computing & DevOps,4,Prof. M. Joseph,"Cloud service models; AWS/GCP; virtualization; Docker containers; Kubernetes orchestration; CI/CD pipelines",Not Started
+7,CS702,Big Data Analytics,3,Dr. S. Bannerjee,"Hadoop ecosystem; HDFS; Apache Spark; MapReduce; NoSQL; stream processing",Not Started
+7,CS703,Cyber Law and Professional Ethics,3,Prof. T. Kumar,"IT Act; intellectual property rights; data privacy; cyber crime ethics",Not Started
+7,CS704,Major Project Phase 1,4,Faculty Mentor,"Problem definition; literature survey; feasibility analysis; preliminary implementation",Not Started
+8,CS801,Major Project Phase 2,8,Project Committee,"Full system implementation; testing; empirical results; thesis write-up; final viva",Not Started
+8,CS802,Industrial Internship / Capstone,6,Industry Supervisor,"Full-time industry internship; sprint delivery; weekly mentor logs; industrial report",Not Started
+8,CS803,High Performance Computing,4,Dr. V. Murthy,"Parallel architectures; OpenMP multi-threading; MPI message passing; GPU CUDA fundamentals",Not Started
