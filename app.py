@@ -653,11 +653,15 @@ DEGREE OS DATA CONTEXT:
         "At the start of your response, specify which data area was used: Courses, Calendar, Assessments, Scores or Plan."
     )
 
-    # Check for GEMINI_API_KEY
+    # Check for GEMINI_API_KEY safely without crashing if secrets.toml is absent
     api_key = None
-    if "GEMINI_API_KEY" in st.secrets:
-        api_key = st.secrets["GEMINI_API_KEY"]
-    elif os.environ.get("GEMINI_API_KEY"):
+    try:
+        if "GEMINI_API_KEY" in st.secrets:
+            api_key = st.secrets["GEMINI_API_KEY"]
+    except Exception:
+        pass
+
+    if not api_key:
         api_key = os.environ.get("GEMINI_API_KEY")
 
     if api_key:
@@ -801,20 +805,31 @@ DEGREE OS DATA CONTEXT:
                     from google import genai
                     client = genai.Client(api_key=api_key)
                     prompt = f"""Context:\n{context_str}\n\nUser Question: {user_input}"""
-                    response = client.models.generate_content(
-                        model="gemini-2.5-flash",
-                        contents=prompt,
-                        config={
-                            "system_instruction": SYSTEM_INSTRUCTION,
-                            "temperature": 0.1
-                        }
-                    )
-                    answer_text = response.text.strip()
-                    # Determine data area
-                    for area_candidate in ["Courses", "Calendar", "Assessments", "Scores", "Plan"]:
-                        if area_candidate.lower() in answer_text[:40].lower():
-                            answer_area = area_candidate
-                            break
+                    response = None
+                    for model_name in ["gemini-3.5-flash-lite", "gemini-3.5-flash", "gemini-3.8-flash"]:
+                        try:
+                            response = client.models.generate_content(
+                                model=model_name,
+                                contents=prompt,
+                                config={
+                                    "system_instruction": SYSTEM_INSTRUCTION,
+                                    "temperature": 0.1
+                                }
+                            )
+                            if response and response.text:
+                                break
+                        except Exception:
+                            continue
+
+                    if response and response.text:
+                        answer_text = response.text.strip()
+                        # Determine data area
+                        for area_candidate in ["Courses", "Calendar", "Assessments", "Scores", "Plan"]:
+                            if area_candidate.lower() in answer_text[:40].lower():
+                                answer_area = area_candidate
+                                break
+                    else:
+                        answer_area, answer_text = get_grounded_answer(user_input)
                 except Exception as e:
                     # Fallback to local grounded answers on any API failure
                     answer_area, answer_text = get_grounded_answer(user_input)
@@ -863,3 +878,4 @@ elif selected_page == "Data Admin":
 
     with col_info:
         st.write("Click any cell to edit, click `+` row to add new records, or select rows and press `Delete` to remove.")
+
